@@ -21,6 +21,7 @@ const Signup = () => {
         alert(data.message)
       }
     } catch (error) {
+      alert("Something went wrong.")
       console.error(error)
     }
   }

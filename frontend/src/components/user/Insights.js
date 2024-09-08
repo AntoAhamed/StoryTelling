@@ -28,6 +28,7 @@ function Insights() {
                 const { data } = await axios.get('http://localhost:5000/api/userRoutes/getStories', config)
                 setStories(data.stories)
             } catch (error) {
+                alert("Something went wrong. Please try again later.")
                 console.error(error)
             }
         }
@@ -42,14 +43,15 @@ function Insights() {
                     <Profile userInfo={userInfo} />
                 </div>
                 <div className='col-7 border rounded p-4 bg-light'>
+                    <h1 className='mb-4'><u>Insights of your stories</u></h1>
                     <div className="accordion accordion-flush" id="accordionFlushExample">
-                        {stories.map((story, index) => (
+                        {stories.length > 0 ? stories.map((story, index) => (
                             <div key={index} className="accordion-item">
                                 <h2 className="accordion-header">
                                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                                         <div>
                                             <h3>{story.title} <sub>-By {story.author.name}</sub></h3>
-                                            <h5>{story.nodes[0].text.length < 15 ? story.nodes[0].text : story.nodes[0].text.slice(0, 16)}</h5>
+                                            <h5>{story.nodes[0].text.length < 36 ? story.nodes[0].text : story.nodes[0].text.slice(0, 37)}...</h5>
                                         </div>
                                     </button>
                                 </h2>
@@ -71,7 +73,7 @@ function Insights() {
                                         </div>)
                                 })}
                             </div>
-                        ))}
+                        )) : 'No Insights to Show'}
                     </div>
                 </div>
             </div>

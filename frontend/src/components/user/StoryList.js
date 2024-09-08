@@ -33,6 +33,7 @@ function StoryList() {
                 const { data } = await axios.get('http://localhost:5000/api/userRoutes/getAllStories', config)
                 setStories(data.stories)
             } catch (error) {
+                alert("Something went wrong. Please try again later.")
                 console.error(error)
             }
         }

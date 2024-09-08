@@ -47,6 +47,7 @@ function StoryCreate() {
             setNodes([{ choice: '', text: '', choices: [] },])
             alert(data.message)
         } catch (error) {
+            alert("Something went wrong. Please try again later.")
             console.error('Error creating story: ', error)
         }
     };
@@ -87,6 +88,7 @@ function StoryCreate() {
                             <textarea
                                 className="form-control mb-2"
                                 placeholder='Enter Story Here'
+                                rows='5'
                                 value={node.text}
                                 onChange={(e) => handleNodeChange(nodeIndex, e.target.value)}
                                 required

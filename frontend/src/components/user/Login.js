@@ -21,6 +21,7 @@ const LoginPage = () => {
         navigate('/create')
       }
     } catch (error) {
+      alert("Something went wrong.")
       console.error(error)
     }
   }

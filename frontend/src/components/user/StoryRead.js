@@ -31,6 +31,7 @@ function StoryRead() {
 
             setStory(data.updatedStory)
         } catch (error) {
+            alert("Something went wrong. Please try again later.")
             console.error('Error creating story: ', error)
         }
 
@@ -67,6 +68,7 @@ function StoryRead() {
                     currentNode: data.story.nodes[0]
                 })
             } catch (error) {
+                alert("Something went wrong. Please try again later.")
                 console.error(error)
             }
         }
