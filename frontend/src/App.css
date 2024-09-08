@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    background-color: rgb(200, 223, 240);
+}
+
+.App .navbar {
+    background-color: rgb(140, 166, 254);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.App .navbar .navbar-brand {
+    font-size: 24px;
+}
+
+.App .login,
+.App .signup {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.App .create,
+.App .list,
+.App .read,
+.App .insights {
+    padding: 3% 5%;
+}
+
+.App .read .card .card-header {
+    font-size: 20px;
+    font-weight: 520;
+}
+
+.App .read .card .card-header>* {
+    margin-left: 5px;
+}
